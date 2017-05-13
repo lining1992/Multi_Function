@@ -1,0 +1,41 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="@style/BaseAppTheme">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+
+    <style name="immersion_status">
+        <item name="android:clipToPadding">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="ToolbarSubTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textSize">70px</item>
+    </style>
+
+    <style name="ToolbarTitleTextAppearance" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">90px</item>
+    </style>
+
+    <style name="ToolBarMenuStyle" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@android:color/darker_gray</item>
+        <item name="android:textSize">60px</item>
+    </style>
+    
+    <style name="TabLayoutTextStyle">
+        <item name="android:textSize">@dimen/text_16_sp</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300px"
+        android:orientation="vertical"
+        android:background="@drawable/wode_zijin_dise">
+
+        <TextView
+        android:layout_marginTop="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A级代理商"
+        android:textSize="50px"
+        android:layout_gravity="center_horizontal"
+            />
+        <TextView
+            android:layout_marginTop="50px"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥200000.00"
+            android:textSize="50px"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="支付方式"
+        android:layout_margin="40px"
+        android:textSize="35px"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40px">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="169px"
+            android:layout_height="169px"
+            android:background="@drawable/wode_weixinzhifu"
+            android:layout_marginLeft="50px"
+            android:scaleType="fitXY"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/iv">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信支付"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="30px"
+            android:textSize="40px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="推荐安装微信5.0及以上版本的使用"
+            android:layout_marginLeft="30px"
+            android:layout_marginTop="20px"
+            android:textSize="30px"
+            android:textColor="@color/textcolor"/>
+
+        </LinearLayout>
+        <CheckBox
+            android:layout_width="75px"
+            android:layout_height="75px"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/selector_pay"
+            android:layout_marginRight="50px"
+            android:button="@null"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80px">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="169px"
+            android:layout_height="169px"
+            android:background="@drawable/wode_zhifubaozhifu"
+            android:layout_marginLeft="50px"
+            android:scaleType="fitXY"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_toRightOf="@id/iv">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="支付宝支付"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="30px"
+                android:textSize="40px"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="推荐使用支付宝账号的用户使用"
+                android:layout_marginLeft="30px"
+                android:layout_marginTop="20px"
+                android:textSize="30px"
+                android:textColor="@color/textcolor"/>
+
+        </LinearLayout>
+        <CheckBox
+            android:layout_width="75px"
+            android:layout_height="75px"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/selector_pay"
+            android:layout_marginRight="50px"
+            android:button="@null"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="查看更多支付方式"
+        android:textSize="40px"
+        android:layout_marginTop="70px"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="30px"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="90px">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确认支付"
+            android:textColor="#fff"
+            android:background="#ff6600"
+            android:layout_marginRight="20px"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="先看看"
+            android:textColor="#ff6600"
+            android:background="@drawable/selector_btn_stroke_orange"
+            android:layout_marginLeft="20px"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>

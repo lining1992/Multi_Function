@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group >
+        <item android:id="@+id/menu_new"
+              android:title="咨询"
+              android:checkable="true"
+              android:icon="@mipmap/icon_news"/>
+
+        <item android:id="@+id/menu_tweet"
+              android:title="动弹"
+              android:checkable="true"
+              android:icon="@mipmap/icon_tweets"/>
+
+        <item android:id="@+id/menu_blog"
+              android:title="博客"
+              android:checkable="true"
+              android:icon="@mipmap/icon_blog"/>
+
+    </group>
+</menu>

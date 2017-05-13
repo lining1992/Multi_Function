@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/channel_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_scrollFlags="scroll|enterAlways"/>
+        </android.support.design.widget.AppBarLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25px"
+                android:layout_marginLeft="20px">
+            <TextView
+                android:id="@+id/wo_pin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我的频道"
+                android:textSize="20sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="单击增删频道,长按拖拽排序"
+                    android:layout_toRightOf="@+id/wo_pin"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20px"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ffcdcdcd"
+                android:layout_marginTop="40px"/>
+
+            <com.baidu.lining.displayadapter.view.DragGrid
+                android:id="@+id/userGridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="20px"
+                android:gravity="center"
+                android:horizontalSpacing="20px"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="14.0px"
+                android:layout_marginTop="30px"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ffcdcdcd"
+                android:layout_marginTop="40px"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="更多频道"
+                android:textSize="20sp"
+                android:layout_marginTop="30px"
+                android:layout_marginLeft="20px"/>
+
+            <com.baidu.lining.displayadapter.view.OtherGridView
+                android:id="@+id/otherGridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:numColumns="4"
+                android:layout_marginLeft="20px"
+                android:layout_marginRight="20px"
+                android:gravity="center"
+                android:horizontalSpacing="20px"
+                android:listSelector="@android:color/transparent"
+                android:scrollbars="vertical"
+                android:stretchMode="columnWidth"
+                android:verticalSpacing="14.0px"
+                android:layout_marginTop="30px"/>
+
+        </LinearLayout>
+        </ScrollView>
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

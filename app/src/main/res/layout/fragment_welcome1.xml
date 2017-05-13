@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:id="@+id/wel_fl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg"/>
+
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="150px"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_home"
+            android:text="Home"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:checked="false"
+            android:textColor="@drawable/tab_menu_text"/>
+        <RadioButton
+            android:id="@+id/rb_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_location"
+            android:text="Location"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/tab_menu_text"/>
+        <RadioButton
+            android:id="@+id/rb_like"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_like"
+            android:text="Like"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/tab_menu_text"/>
+        <RadioButton
+            android:id="@+id/rb_person"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_person"
+            android:text="Person"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/tab_menu_text"/>
+    </RadioGroup>
+</RelativeLayout>

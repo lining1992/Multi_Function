@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="250px"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/iv"
+        android:layout_width="169px"
+        android:layout_height="169px"
+        android:src="@drawable/tuijian_touxiang6"
+        android:layout_marginTop="40px"
+        android:layout_marginLeft="30px"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="50px"
+        android:layout_marginTop="20px"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="刘小星"
+            android:textSize="50px"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="30px"/>
+        <TextView
+            android:id="@+id/num_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消客:556人"
+            android:textSize="50px"
+            android:layout_marginTop="30px"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20px"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="111"
+            android:textSize="50px"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="30px"/>
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="消客:556人"
+            android:textSize="50px"
+            android:layout_marginTop="30px"
+            android:layout_gravity="center_vertical"/>
+
+    </LinearLayout>
+
+</LinearLayout>

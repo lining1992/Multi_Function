@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/xiaomi_calend_text</item>    <!-- 状态栏 -->
+        <item name="colorPrimaryDark">@color/xiaomi_calend_text</item> <!-- toolbar -->
+        <item name="colorAccent">@color/xiaomi_calend_text</item>  <!-- 重点 -->
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+</resources>
