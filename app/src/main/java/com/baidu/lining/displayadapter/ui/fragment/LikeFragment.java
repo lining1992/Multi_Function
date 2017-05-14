@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -185,7 +186,6 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
 
             }
 
-
             @Override
             public void onPageSelected(int pos) {
 
@@ -196,7 +196,6 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
                 }
                 points.getChildAt(pos).setBackgroundResource(selectRes);
             }
-
 
             @Override
             public void onPageScrollStateChanged(int state) {
@@ -292,11 +291,8 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
                                     bannersBean.getLink(), bannersBean.getTitle(), bannersBean.getImg())));
                     build(bannerList);
                 }, throwable -> {
-
-                });
+        });
     }
-
-
 
     @Override
     public void onCompletion(MediaPlayer mediaPlayer) {
@@ -304,23 +300,18 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
     }
 
     @Override
-    public void onPause() {
-        super.onPause();
-        position = video.getCurrentPosition();
-        Toast.makeText(getActivity(), "当前进度:" + position, Toast.LENGTH_SHORT).show();
-        video.pause();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        video.pause();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        video.seekTo(position);
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if(hidden){
+            video.pause();
+            position = video.getCurrentPosition();
+            Toast.makeText(getActivity(), "当前进度:" + position, Toast.LENGTH_SHORT).show();
+            Log.d("debugli","第一次退出");
+        }else{
+            video.seekTo(position);
+            video.start();
+            Log.d("debugli","第一次进来");
+        }
     }
 
     @Override
