@@ -45,9 +45,8 @@ import rx.subscriptions.CompositeSubscription;
  */
 public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompletionListener,BannerAdapter.ViewPagerOnItemClickListener {
 
-   // public final String videoUrl = "android.resource://" + activity.packageName + "/" +R.raw.my_video;
+   public final String videoUrl = "http://128.1.226.186/file/MP4/mp413/%E5%A6%B2%E5%B7%B1-%E5%85%A8%E4%B8%96%E7%95%8C%E6%88%91%E5%8F%AA%E5%96%9C%E6%AC%A2%E4%BD%A0[68mtv.com].mp4";
 
-    String url = "file:///android_assets/my_video.mp4";
     private int position;
 
     @BindView(R.id.like_video)
@@ -86,7 +85,7 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
         MediaController controller = new MediaController(activity);
         controller.setVisibility(View.INVISIBLE);
         video.setMediaController(controller);
-        Uri uri = Uri.parse("");
+        Uri uri = Uri.parse(videoUrl);
         video.setVideoURI(uri);
         video.setSystemUiVisibility(View.GONE);
         video.setOnCompletionListener(this);
