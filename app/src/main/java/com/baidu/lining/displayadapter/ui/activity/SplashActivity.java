@@ -38,20 +38,19 @@ public class SplashActivity extends AutoLayoutActivity{
     }
 
     private void init() {
-
         Observable.timer(2000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aLong -> {
                     startActivity(new Intent(SplashActivity.this,MainActivity.class));
                     finish();
-
                 });
     }
 
     private void animation() {
         // 去除状态栏
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         AlphaAnimation animation = new AlphaAnimation(0f,1.0f);
         animation.setDuration(3000);
