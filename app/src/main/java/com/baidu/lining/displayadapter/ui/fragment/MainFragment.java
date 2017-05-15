@@ -27,7 +27,6 @@ import butterknife.BindView;
  */
 public class MainFragment extends BaseFragment{
 
-
     private ArrayList<Fragment> fragmentList;
 
     private String[] titles = new String[]{"详情列表","登陆注册","移动支付","recyc列表","表格列表","输入框"};;
@@ -80,7 +79,11 @@ public class MainFragment extends BaseFragment{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), ChannelActivity.class);
-                intent.putExtra("main",titles.length);
+                if(fragmentArrayList!=null && fragmentArrayList.size()>0){
+                    intent.putExtra("main",fragmentArrayList.size());
+                }else{
+                    intent.putExtra("main",titles.length);
+                }
                 startActivityForResult(intent,1);
                 getActivity().overridePendingTransition(0,0);
             }
@@ -97,12 +100,12 @@ public class MainFragment extends BaseFragment{
         fragmentList.add(recycleViewGridFragment);
         fragmentList.add(editFragment);
 
-        MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(), fragmentList,fragmentArrayList);
+        MyPagerAdapter adapter = new MyPagerAdapter(activity.getSupportFragmentManager(),
+                fragmentList,fragmentArrayList);
         vp.setAdapter(adapter);
         vp.setCurrentItem(0);
 
         tb.setupWithViewPager(vp);
-
     }
 
     class MyPagerAdapter extends FragmentPagerAdapter {
@@ -110,8 +113,8 @@ public class MainFragment extends BaseFragment{
         private final ArrayList<Fragment> list;
         private final ArrayList<Fragment> fragmentArrayList;
 
-
-        public MyPagerAdapter(FragmentManager fm, ArrayList<Fragment> list,ArrayList<Fragment> fragmentArrayList){
+        public MyPagerAdapter(FragmentManager fm, ArrayList<Fragment> list,
+                              ArrayList<Fragment> fragmentArrayList){
             super(fm);
             this.list = list;
             this.fragmentArrayList = fragmentArrayList;
@@ -171,22 +174,22 @@ public class MainFragment extends BaseFragment{
             for(int i=0;i<channelList.size();i++){
                 switch (i){
                     case 0:
-                        fragmentArrayList.add(listFragment);
+                        fragmentArrayList.add(new ListFragment());
                         break;
                     case 1:
-                        fragmentArrayList.add(payFragment);
+                        fragmentArrayList.add(new PayFragment());
                         break;
                     case 2:
-                        fragmentArrayList.add(recycleFragment);
+                        fragmentArrayList.add(new RecycleFragment());
                         break;
                     case 3:
-                        fragmentArrayList.add(registerFragment);
+                        fragmentArrayList.add(new RegisterFragment());
                         break;
                     case 4:
-                        fragmentArrayList.add(recycleViewGridFragment);
+                        fragmentArrayList.add(new RecycleViewGridFragment());
                         break;
                     case 5:
-                        fragmentArrayList.add(editFragment);
+                        fragmentArrayList.add(new EditFragment());
                         break;
                 }
             }
@@ -201,7 +204,6 @@ public class MainFragment extends BaseFragment{
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-
     }
 
     @Override
@@ -214,7 +216,6 @@ public class MainFragment extends BaseFragment{
     @Override
     public void onResume() {
         super.onResume();
-
-        initData();
+     //   initData();
     }
 }

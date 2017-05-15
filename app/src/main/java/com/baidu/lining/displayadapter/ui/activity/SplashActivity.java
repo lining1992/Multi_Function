@@ -43,6 +43,7 @@ public class SplashActivity extends AutoLayoutActivity{
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aLong -> {
                     startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                    this.overridePendingTransition(0,0);
                     finish();
                 });
     }

@@ -26,6 +26,7 @@ import com.baidu.lining.displayadapter.base.BaseFragment;
 import com.baidu.lining.displayadapter.utils.DisplayUtil;
 import com.baidu.lining.displayadapter.widget.banner.BannerAdapter;
 import com.baidu.lining.displayadapter.widget.banner.BannerEntity;
+import com.baidu.lining.displayadapter.widget.banner.BannerUtils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
@@ -61,17 +62,11 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
 
     List<BannerEntity> bannerList = new ArrayList<BannerEntity>();
     private List<BangumiAppIndexInfo.ResultBean.AdBean.HeadBean> banners = new ArrayList<>();
-    private boolean isStopScroll = false;
+
     //默认轮播时间，10s
     private int delayTime = 10;
-    //选中显示Indicator
-    private int selectRes = R.drawable.shape_dots_select;
-    //非选中显示Indicator
-    private int unSelcetRes = R.drawable.shape_dots_default;
-    //当前页的下标
-    private int currrentPos;
-    private CompositeSubscription compositeSubscription;
-    private List<ImageView> imageViewList = new ArrayList<>();
+
+    private BannerUtils bannerUtils;
 
     @Override
     public int getLayoutRes() {
@@ -98,166 +93,8 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
         });
         video.clearFocus();
         video.start();
-    }
 
-    /**
-     * 设置轮播间隔时间
-     *
-     * @param time 轮播间隔时间，单位秒
-     */
-    public LikeFragment delayTime(int time) {
-
-        this.delayTime = time;
-        return this;
-    }
-
-    /**
-     * 设置Points资源 Res
-     *
-     * @param selectRes 选中状态
-     * @param unselcetRes 非选中状态
-     */
-    public void setPointsRes(int selectRes, int unselcetRes) {
-
-        this.selectRes = selectRes;
-        this.unSelcetRes = unselcetRes;
-    }
-
-    /**
-     * 图片轮播需要传入参数
-     */
-    public void build(List<BannerEntity> list) {
-
-        destory();
-
-        if (list.size() == 0) {
-        //    this.setVisibility(GONE);
-            return;
-        }
-
-        bannerList = new ArrayList<>();
-        bannerList.addAll(list);
-        final int pointSize;
-        pointSize = bannerList.size();
-
-        if (pointSize == 2) {
-            bannerList.addAll(list);
-        }
-        //判断是否清空 指示器点
-        if (points.getChildCount() != 0) {
-            points.removeAllViewsInLayout();
-        }
-
-        //初始化与个数相同的指示器点
-        for (int i = 0; i < pointSize; i++) {
-            View dot = new View(activity);
-            dot.setBackgroundResource(unSelcetRes);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    DisplayUtil.dp2px(activity, 6),
-                    DisplayUtil.dp2px(activity, 6));
-            params.leftMargin = 13;
-            dot.setLayoutParams(params);
-            dot.setEnabled(false);
-            // 添加轮播图三个点view
-            points.addView(dot);
-        }
-
-        points.getChildAt(0).setBackgroundResource(selectRes);
-
-        for (int i = 0; i < bannerList.size(); i++) {
-            ImageView mImageView = new ImageView(activity);
-
-            Glide.with(getContext())
-                    .load(bannerList.get(i).img)
-                    .centerCrop()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.bili_default_image_tv)
-                    .dontAnimate()
-                    .into(mImageView);
-            imageViewList.add(mImageView);
-        }
-
-        //监听图片轮播，改变指示器状态
-        vp.clearOnPageChangeListeners();
-        vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int pos) {
-
-                pos = pos % pointSize;
-                currrentPos = pos;
-                for (int i = 0; i < points.getChildCount(); i++) {
-                    points.getChildAt(i).setBackgroundResource(unSelcetRes);
-                }
-                points.getChildAt(pos).setBackgroundResource(selectRes);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-                switch (state) {
-                    case ViewPager.SCROLL_STATE_IDLE:
-                        if (isStopScroll) {
-                            startScroll();
-                        }
-                        break;
-                    case ViewPager.SCROLL_STATE_DRAGGING:
-                        stopScroll();
-                        compositeSubscription.unsubscribe();
-                        break;
-                }
-            }
-        });
-
-        BannerAdapter bannerAdapter = new BannerAdapter(imageViewList);
-        vp.setAdapter(bannerAdapter);
-        bannerAdapter.notifyDataSetChanged();
-        bannerAdapter.setmViewPagerOnItemClickListener(this);
-
-        //图片开始轮播
-        startScroll();
-    }
-
-    /**
-     * 图片开始轮播
-     */
-    private void startScroll() {
-
-        compositeSubscription = new CompositeSubscription();
-        isStopScroll = false;
-        Subscription subscription = Observable.timer(delayTime, TimeUnit.SECONDS)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(aLong -> {
-
-                    if (isStopScroll) {
-                        return;
-                    }
-
-                    isStopScroll = true;
-                    vp.setCurrentItem(vp.getCurrentItem() + 1);
-                });
-        compositeSubscription.add(subscription);
-    }
-
-    /**
-     * 图片停止轮播
-     */
-    private void stopScroll() {
-
-        isStopScroll = true;
-    }
-
-    public void destory() {
-
-        if (compositeSubscription != null) {
-            compositeSubscription.unsubscribe();
-        }
+        bannerUtils = new BannerUtils(activity,vp,points);
     }
 
     @Override
@@ -285,11 +122,11 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(resultBeans -> {
 
-                    delayTime(5);
+                    bannerUtils.delayTime(5);
                     Observable.from(banners)
                             .forEach(bannersBean -> bannerList.add(new BannerEntity(
                                     bannersBean.getLink(), bannersBean.getTitle(), bannersBean.getImg())));
-                    build(bannerList);
+                    bannerUtils.build(bannerList);
                 }, throwable -> {
         });
     }
@@ -303,14 +140,12 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         if(hidden){
-            video.pause();
             position = video.getCurrentPosition();
+            video.pause();
             Toast.makeText(getActivity(), "当前进度:" + position, Toast.LENGTH_SHORT).show();
-            Log.d("debugli","第一次退出");
         }else{
             video.seekTo(position);
             video.start();
-            Log.d("debugli","第一次进来");
         }
     }
 

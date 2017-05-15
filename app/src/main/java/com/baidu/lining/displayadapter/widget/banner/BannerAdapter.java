@@ -1,12 +1,15 @@
 package com.baidu.lining.displayadapter.widget.banner;
 
 import android.support.v4.view.PagerAdapter;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.ImageView;
 
 import java.util.List;
+
+import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by hcc on 16/8/7 21:18
@@ -21,16 +24,19 @@ public class BannerAdapter extends PagerAdapter {
   private int pos;
 
   private ViewPagerOnItemClickListener mViewPagerOnItemClickListener;
-
+  private ViewPagerOnTouchListener mViewPagerOnTouchListener;
 
   public void setmViewPagerOnItemClickListener(ViewPagerOnItemClickListener mViewPagerOnItemClickListener) {
 
     this.mViewPagerOnItemClickListener = mViewPagerOnItemClickListener;
   }
 
+  public void setViewPagerOnTouchListener(ViewPagerOnTouchListener mViewPagerOnTouchListener){
+    this.mViewPagerOnTouchListener = mViewPagerOnTouchListener;
+  }
+
 
   public BannerAdapter(List<ImageView> list) {
-
     this.mList = list;
   }
 
@@ -72,6 +78,21 @@ public class BannerAdapter extends PagerAdapter {
         mViewPagerOnItemClickListener.onItemClick();
       }
     });
+    // 按下状态不让viewPager滑动
+    v.setOnTouchListener(new View.OnTouchListener() {
+      @Override
+      public boolean onTouch(View view, MotionEvent motionEvent) {
+        switch (motionEvent.getAction()){
+          case MotionEvent.ACTION_DOWN:
+            mViewPagerOnTouchListener.onTouchDown();
+            break;
+          case MotionEvent.ACTION_UP:
+            mViewPagerOnTouchListener.onTouchUp();
+            break;
+        }
+        return false;
+      }
+    });
 
     container.addView(v);
     return v;
@@ -87,5 +108,10 @@ public class BannerAdapter extends PagerAdapter {
   public interface ViewPagerOnItemClickListener {
 
     void onItemClick();
+  }
+
+  public interface ViewPagerOnTouchListener{
+    void onTouchDown();
+    void onTouchUp();
   }
 }
