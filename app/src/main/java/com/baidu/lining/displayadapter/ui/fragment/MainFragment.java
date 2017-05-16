@@ -218,4 +218,5 @@ public class MainFragment extends BaseFragment{
         super.onResume();
      //   initData();
     }
+    
 }
