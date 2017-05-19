@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatDelegate;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 
 import com.baidu.lining.displayadapter.R;
 import com.baidu.lining.displayadapter.ui.fragment.WelComeFragment;
+import com.baidu.lining.displayadapter.utils.PreferenceUtil;
 import com.baidu.lining.displayadapter.utils.ToastUtil;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -27,8 +29,6 @@ public class MainActivity extends AutoLayoutActivity implements NavigationView.O
 
     @BindView(R.id.main_navi)
     public NavigationView navigationView;
-    //    @BindView(R.id.toolbar)
-//    public Toolbar toolbar;
     @BindView(R.id.main_draw)
     public DrawerLayout drawerLayout;
 
@@ -37,16 +37,18 @@ public class MainActivity extends AutoLayoutActivity implements NavigationView.O
     public String packageName;
     public TextView title;
     long exitTime = 0;
+
+    public String MODE_KEY = "mode_key";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setImmersionStatus();
 
-        setContentView(R.layout.activity_main1);
+        setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
-
     }
 
     // 设置透明状态栏
@@ -72,9 +74,26 @@ public class MainActivity extends AutoLayoutActivity implements NavigationView.O
                 startActivity(new Intent(this, PersonActivity.class));
                 break;
             case R.id.menu_blog:
+                startActivity(new Intent(this,MuiltTypeRecyc.class));
+                break;
+            case R.id.menu_switchMode:
+                switchNightMode();
                 break;
         }
         return false;
+    }
+
+    private void switchNightMode() {
+
+        boolean b = PreferenceUtil.getBoolean("mode_key", false);
+        if(b){
+            PreferenceUtil.putBoolean("mode_key", false);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else{
+            PreferenceUtil.putBoolean("mode_key", true);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        recreate();
     }
 
     /**
@@ -109,5 +128,13 @@ public class MainActivity extends AutoLayoutActivity implements NavigationView.O
         } else {
             finish();
         }
+    }
+
+    /**
+     * 解决App重启后导致Fragment重叠的问题
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+       // super.onSaveInstanceState(outState);
     }
 }

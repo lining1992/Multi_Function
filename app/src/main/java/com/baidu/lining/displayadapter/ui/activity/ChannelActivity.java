@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.baidu.lining.displayadapter.R;
+import com.baidu.lining.displayadapter.base.BaseActivity;
 import com.baidu.lining.displayadapter.ui.adapter.DragAdapter;
 import com.baidu.lining.displayadapter.ui.adapter.OtherAdapter;
 import com.baidu.lining.displayadapter.bean.ChannelItem;
@@ -29,33 +30,31 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 /**
  * Created by Administrator on 2017/5/11.
  */
-public class ChannelActivity extends AutoLayoutActivity implements AdapterView.OnItemClickListener{
+public class ChannelActivity extends BaseActivity implements AdapterView.OnItemClickListener{
 
-    private DragGrid userGridView;
-    private OtherGridView otherGridView;
+
     List<ChannelItem> userList = new ArrayList<ChannelItem>();
     List<ChannelItem> otherList = new ArrayList<ChannelItem>();
     private DragAdapter userAdapter;
     private OtherAdapter otherAdapter;
     private boolean isMove = false;
-    private ImageView moveImageView;
     private int size;
+    @BindView(R.id.userGridView)
+    DragGrid userGridView;
+    @BindView(R.id.otherGridView)
+    OtherGridView otherGridView;
+    @BindView(R.id.channel_toolbar)
+    Toolbar tb;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void initData() {
 
-        setContentView(R.layout.activity_channel);
         size = getIntent().getIntExtra("main", 0);
-        initView();
-        initData();
-    }
 
-    private void initData() {
-        int j=0;
         ChannelItem channeItem = new ChannelItem();
         for(int i=0;i<size;i++){
             channeItem.setName("首页");
@@ -76,10 +75,8 @@ public class ChannelActivity extends AutoLayoutActivity implements AdapterView.O
         otherGridView.setAdapter(otherAdapter);
     }
 
-    private void initView() {
-        userGridView = (DragGrid) findViewById(R.id.userGridView);
-        otherGridView = (OtherGridView) findViewById(R.id.otherGridView);
-        Toolbar tb = (Toolbar) findViewById(R.id.channel_toolbar);
+    public void initView() {
+
         tb.setTitle("频道管理");
         setSupportActionBar(tb);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -93,6 +90,11 @@ public class ChannelActivity extends AutoLayoutActivity implements AdapterView.O
 
         userGridView.setOnItemClickListener(this);
         otherGridView.setOnItemClickListener(this);
+    }
+
+    @Override
+    public int getLayoutRes() {
+        return R.layout.activity_channel;
     }
 
     @Override

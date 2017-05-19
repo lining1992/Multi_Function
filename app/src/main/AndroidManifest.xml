@@ -58,6 +58,8 @@
 
         <activity android:name=".ui.activity.ChannelActivity"/>
 
+        <activity android:name=".ui.activity.MuiltTypeRecyc"/>
+
     </application>
 
 </manifest>

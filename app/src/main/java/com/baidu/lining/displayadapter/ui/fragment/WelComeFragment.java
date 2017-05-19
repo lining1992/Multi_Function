@@ -1,12 +1,8 @@
 package com.baidu.lining.displayadapter.ui.fragment;
 
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
-import android.view.View;
-import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 
 import com.baidu.lining.displayadapter.R;
 import com.baidu.lining.displayadapter.base.BaseFragment;
@@ -32,16 +28,13 @@ public class WelComeFragment extends BaseFragment implements RadioGroup.OnChecke
 
     @Override
     public int getLayoutRes() {
-        return R.layout.fragment_welcome1;
+        return R.layout.fragment_welcome;
     }
 
     @Override
     public void initView() {
-
         rg.setOnCheckedChangeListener(this);
         rb_home.setChecked(true);
-
-
     }
 
     public void hideAllFragment(FragmentTransaction transaction) {

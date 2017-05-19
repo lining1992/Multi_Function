@@ -79,7 +79,6 @@ public class ListFragment extends BaseFragment {
             if (view == null) {
                 view = LayoutInflater.from(getActivity()).inflate(R.layout.list_item, null);
                 view.setTag(viewHolder);
-
                 AutoUtils.autoSize(view);
             } else {
                 viewHolder = (ViewHolder) view.getTag();

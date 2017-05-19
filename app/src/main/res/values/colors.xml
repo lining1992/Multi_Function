@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#01B9AD</color>
-    <color name="colorPrimaryDark">#01B9AD</color>
-    <color name="colorAccent">#01B9AD</color>
+    <color name="colorPrimary">#00cc66</color>
+    <color name="colorPrimaryDark">#00cc66</color>
+    <color name="colorAccent">#00cc66</color>
 
+    <color name="navi_bg">#99ff99</color>
+    <color name="radio_group_bg">#f3f3f3</color>
+    <color name="vp_bg">#fff</color>
     <color name="btn_bg">#ff6600</color>
     <color name="btn_bg_pre">#c8580d</color>
     <color name="edittext_bg">#d7d7d7</color>

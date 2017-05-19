@@ -9,6 +9,7 @@ import android.view.animation.Animation;
 import android.widget.ImageView;
 
 import com.baidu.lining.displayadapter.R;
+import com.baidu.lining.displayadapter.base.BaseActivity;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.concurrent.TimeUnit;
@@ -23,22 +24,24 @@ import rx.schedulers.Schedulers;
 /**
  * Created by Administrator on 2017/5/14.
  */
-public class SplashActivity extends AutoLayoutActivity{
+public class SplashActivity extends BaseActivity{
 
     @BindView(R.id.splash_iv)
     ImageView splash_iv;
-    private Unbinder bind;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
-        bind = ButterKnife.bind(this);
+    public int getLayoutRes() {
+        return R.layout.activity_splash;
+    }
+
+    @Override
+    public void initData() {
+        super.initData();
         animation();
     }
 
     private void init() {
-        Observable.timer(2000, TimeUnit.MILLISECONDS)
+        Observable.timer(1000, TimeUnit.MILLISECONDS)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(aLong -> {
@@ -73,11 +76,5 @@ public class SplashActivity extends AutoLayoutActivity{
             }
         });
         splash_iv.startAnimation(animation);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        bind.unbind();
     }
 }

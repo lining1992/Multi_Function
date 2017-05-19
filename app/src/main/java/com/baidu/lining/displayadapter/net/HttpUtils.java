@@ -32,7 +32,6 @@ public class HttpUtils {
 		request = new StringRequest(Method.POST,url, vif.loadingListener(), vif.errorListener()){
 			@Override
 			protected Map<String, String> getParams() throws AuthFailureError {
-				// TODO Auto-generated method stub
 				return params;
 			}
 		};

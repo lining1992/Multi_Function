@@ -1,70 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <android.support.design.widget.AppBarLayout
+    <FrameLayout
+        android:id="@+id/wel_fl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <android.support.v7.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:elevation="0dp"
-            app:layout_scrollFlags="scroll|enterAlways">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/iv"
-                android:layout_width="80px"
-                android:layout_height="80px"
-                android:src="@drawable/touxiang"
-                android:layout_marginLeft="15dp"/>
-            <TextView
-                android:id="@+id/main_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Home"
-                android:layout_marginLeft="15dp"
-                android:textSize="@dimen/text_size"/>
-        </android.support.v7.widget.Toolbar>
-    </android.support.design.widget.AppBarLayout>
+        android:layout_height="match_parent"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:background="@color/xiaomi_calend_text">
-
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tb"
+    <RadioGroup
+        android:id="@+id/rg"
         android:layout_width="match_parent"
         android:layout_height="150px"
-        android:background="?attr/colorPrimary"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:tabIndicatorHeight="0px"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/btn_bg"
-        android:layout_weight="9"/>
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@color/radio_group_bg">
 
-    <ImageView
-        android:id="@+id/wel_add_tab"
-        android:layout_width="130px"
-        android:layout_height="130px"
-        android:src="@drawable/channel_glide"
-        android:layout_gravity="center_vertical"
-        android:layout_marginRight="10px"
-        android:layout_weight="1"/>
-
-    </LinearLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#fff"
-        android:layout_weight="1"/>
-
-
-</LinearLayout>
+        <RadioButton
+            android:id="@+id/rb_home"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_home"
+            android:text="Home"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:checked="false"
+            android:textColor="@drawable/tab_menu_text"/>
+        <RadioButton
+            android:id="@+id/rb_location"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_location"
+            android:text="Location"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/tab_menu_text"/>
+        <RadioButton
+            android:id="@+id/rb_like"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_like"
+            android:text="Like"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/tab_menu_text"/>
+        <RadioButton
+            android:id="@+id/rb_person"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableTop="@drawable/select_person"
+            android:text="Person"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:textColor="@drawable/tab_menu_text"/>
+    </RadioGroup>
+</RelativeLayout>

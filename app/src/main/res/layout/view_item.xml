@@ -10,5 +10,5 @@
     android:padding="10dp"
     android:textSize="14sp"
     tools:text="Aardvark"
-    android:background="@android:color/white"
+    android:background="@color/vp_bg"
     tools:context=".ui.activity.MainActivity"/>

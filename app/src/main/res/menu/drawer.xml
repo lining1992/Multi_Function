@@ -12,9 +12,14 @@
               android:icon="@mipmap/icon_tweets"/>
 
         <item android:id="@+id/menu_blog"
-              android:title="博客"
+              android:title="自定义刷新列表"
               android:checkable="true"
               android:icon="@mipmap/icon_blog"/>
+
+        <item android:id="@+id/menu_switchMode"
+              android:title="切换主题"
+              android:checkable="true"
+              android:icon="@mipmap/ic_switch_night"/>
 
     </group>
 </menu>

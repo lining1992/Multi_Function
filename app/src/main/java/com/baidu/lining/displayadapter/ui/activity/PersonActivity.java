@@ -12,32 +12,31 @@ import android.util.Log;
 import android.view.View;
 
 import com.baidu.lining.displayadapter.R;
+import com.baidu.lining.displayadapter.base.BaseActivity;
 import com.baidu.lining.displayadapter.ui.adapter.PersonAdapter;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 /**
  * Created by Administrator on 2017/5/10.
  */
-public class PersonActivity extends AutoLayoutActivity{
+public class PersonActivity extends BaseActivity{
 
     private Activity activity;
     List<String> list = new ArrayList<String>();
-    private RecyclerView rl;
+    @BindView(R.id.person_rl)
+    RecyclerView rl;
+    @BindView(R.id.person_ctb)
+    CollapsingToolbarLayout ctb;
+    @BindView(R.id.person_tb)
+    Toolbar tb;
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_person);
-
-        bindView();
-        initData();
-    }
-
-    private void initData() {
+    public void initData() {
         for(int i=0;i<20;i++){
             list.add("Hello"+i);
         }
@@ -48,10 +47,13 @@ public class PersonActivity extends AutoLayoutActivity{
         rl.setAdapter(new PersonAdapter(this,list));
     }
 
-    private void bindView() {
-        CollapsingToolbarLayout ctb = (CollapsingToolbarLayout)findViewById(R.id.person_ctb);
+    @Override
+    public int getLayoutRes() {
+        return R.layout.activity_person;
+    }
+
+    public void initView() {
         Toolbar tb = (Toolbar) findViewById(R.id.person_tb);
-        rl = (RecyclerView) findViewById(R.id.person_rl);
 
         tb.setTitle("Person");
 

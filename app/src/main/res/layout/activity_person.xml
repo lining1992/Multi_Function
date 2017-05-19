@@ -20,8 +20,7 @@
             android:id="@+id/person_ctb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            app:contentScrim="@color/xiaomi_calend_text"
+            app:contentScrim="@color/colorPrimaryDark"
             app:expandedTitleMarginStart="48dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
         
@@ -53,7 +52,8 @@
         android:id="@+id/person_rl"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:background="@color/vp_bg"/>
     </LinearLayout>
     </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>

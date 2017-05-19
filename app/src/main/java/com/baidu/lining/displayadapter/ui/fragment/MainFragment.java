@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -50,16 +51,17 @@ public class MainFragment extends BaseFragment{
     public TextView title;
     @BindView(R.id.iv)
     public ImageView iv;
+    @BindView(R.id.main_toolbar)
+    public Toolbar toolbar;
 
     @Override
     public int getLayoutRes() {
-        return R.layout.fragment_welcome;
+        return R.layout.fragment_main;
     }
 
     @Override
     public void initView(){
         title.setText("Home");
-
         listFragment = new ListFragment();
         registerFragment = new RegisterFragment();
         payFragment = new PayFragment();
@@ -193,7 +195,8 @@ public class MainFragment extends BaseFragment{
                         break;
                 }
             }
-            MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),fragmentList, fragmentArrayList);
+            MyPagerAdapter adapter = new MyPagerAdapter(getActivity().getSupportFragmentManager(),
+                    fragmentList, fragmentArrayList);
             vp.setAdapter(adapter);
             vp.setCurrentItem(0);
 

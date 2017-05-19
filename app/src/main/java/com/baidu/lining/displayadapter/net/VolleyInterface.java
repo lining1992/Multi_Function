@@ -31,7 +31,6 @@ public abstract class VolleyInterface {
 
 			@Override
 			public void onResponse(String result) {
-				// TODO Auto-generated method stub
 				Log.d(TAG,"result:"+result);
 				onSuccess(result);
 			}
@@ -39,13 +38,12 @@ public abstract class VolleyInterface {
 		return mListener;
 	}
 	
-	// Ո��ʧ���O 
+	// 错误监听
 	public ErrorListener errorListener(){
 		mErrorListener = new ErrorListener() {
 
 			@Override
 			public void onErrorResponse(VolleyError error) {
-				// TODO Auto-generated method stub
 				onError(error);
 			}
 		};
