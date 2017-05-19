@@ -13,7 +13,6 @@ import cn.smssdk.SMSSDK;
 public class App extends Application{
 
     private static RequestQueue queues;
-
     public static RequestQueue getHttpQueues(){
         return queues;
     }
