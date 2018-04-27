@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="alertDialogTheme">@style/FastAlertDialogStyle</item>
+    </style>
+
+    <!-- 自定义的dialog样式 -->
+    <style name="FastAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/fast_framework_dialog_button</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/fast_framework_dialog_msg</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/fast_framework_dialog_bg</item>
+    </style>
+
+</resources>

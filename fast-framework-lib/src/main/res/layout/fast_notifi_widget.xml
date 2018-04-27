@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fast_notifi_widget"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#ffffffff">
+
+    <ImageView
+        android:id="@+id/fast_notifi_widget_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@mipmap/ic_share_friends" />
+
+    <TextView
+        android:id="@+id/fast_notifi_widget_song"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/fast_notifi_widget_icon"
+        android:text="歌曲"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/fast_notifi_widget_singer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fast_notifi_widget_song"
+        android:layout_toRightOf="@id/fast_notifi_widget_icon"
+        android:text="歌手"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_custom_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btn_custom_prev"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="上一首"
+            android:src="@drawable/fast_notifi_prev" />
+
+        <ImageButton
+            android:id="@+id/btn_custom_play"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="播放"
+            android:src="@drawable/fast_notifi_play" />
+
+        <ImageButton
+            android:id="@+id/btn_custom_next"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="下一首"
+            android:src="@drawable/fast_notifi_next" />
+    </LinearLayout>
+
+
+</RelativeLayout>

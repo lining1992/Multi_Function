@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/fast_framework_black_20000000"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/f_guide_bottom_btn_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/fast_framework_guide_btn_bg"
+            android:text="@string/fast_guide_skip"
+            android:textColor="@color/blue" />
+
+        <ImageButton
+            android:id="@+id/f_guide_bottom_btn_prev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/fast_framework_guide_btn_bg"
+            android:src="@mipmap/fast_ic_guide_back"
+            android:visibility="invisible" />
+
+    </FrameLayout>
+
+    <com.fast.framework.style.guide.GuideViewPagerIndicator
+        android:id="@+id/f_guide_bottom_pager_indicator"
+        android:layout_width="0dp"
+        android:layout_height="20dp"
+        android:layout_weight="1" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/f_guide_bottom_btn_done"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/fast_framework_guide_btn_bg"
+            android:text="@string/fast_guide_done"
+            android:textColor="@color/blue" />
+
+        <ImageButton
+            android:id="@+id/f_guide_bottom_btn_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/fast_framework_guide_btn_bg"
+            android:src="@mipmap/fast_ic_guide_next" />
+
+    </FrameLayout>
+
+</LinearLayout>

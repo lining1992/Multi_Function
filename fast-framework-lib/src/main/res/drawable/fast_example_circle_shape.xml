@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ 圆型的按钮，支持设置边框颜色、填充颜色、边框宽度
+
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"
+    android:useLevel="false">
+
+    <!-- 填充颜色 -->
+    <solid android:color="#f70e19" />
+
+    <!-- 边框颜色和宽度 -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/white" />
+
+    <size
+        android:width="10dp"
+        android:height="10dp" />
+
+</shape>

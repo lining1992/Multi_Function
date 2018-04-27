@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ 圆型的按钮，支持设置边框颜色、填充颜色、边框宽度、选中状态
+
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/fast_example_circle_shape_p" android:state_focused="true" />
+    <item android:drawable="@drawable/fast_example_circle_shape_p" android:state_pressed="true" />
+    <item android:drawable="@drawable/fast_example_circle_shape_p" android:state_selected="true" />
+    <item android:drawable="@drawable/fast_example_circle_shape_p" android:state_checked="true" />
+    <item android:drawable="@drawable/fast_example_circle_shape" />
+
+</selector>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="navi_bg">#99ff99</color>
+    <color name="radio_group_bg">#f3f3f3</color>
+    <color name="vp_bg">#fff</color>
+    <color name="btn_bg">#ff6600</color>
+    <color name="btn_bg_pre">#c8580d</color>
+    <color name="edittext_bg">#d7d7d7</color>
+    <color name="line">#c9c9c9</color>
+    <color name="textcolor">#c3c3c3</color>
+    <color name="deep_gray">#666666</color>
+    <color name="textredcolor">#f31216</color>
+    <color name="activitybg">#f3f3f3</color>
+    <color name="press_code">#ffcc33</color>
+    <color name="press_false_code">#ff6600</color>
+    <color name="text_select">#259B24</color>
+    <color name="transparent">#00000000</color>
+    <color name="abc_search_url_text_normal">#ff7fa87f</color>
+    <item name="abc_search_url_text_selected" type="color">@*android:color/black</item>
+    <item name="abc_search_url_text_pressed" type="color">@*android:color/black</item>
+    <color name="gallery_background">#ff111111</color>
+    <color name="gallery_alpha">#b0000000</color>
+    <color name="lighter_gray">#ffd3d3d3</color>
+    <color name="gray">#ff808080</color>
+    <color name="darkgray">#ffa9a9a9</color>
+    <color name="lightgray">#ffd3d3d3</color>
+    <color name="sandybrown">#fff4a460</color>
+    <color name="dimgray">#ff696969</color>
+    <color name="silver">#ffc0c0c0</color>
+    <color name="black">#ff000000</color>
+    <color name="red">#ffff0000</color>
+    <color name="simple_333333">#ff333333</color>
+    <color name="simple_eeeeee">#ffeeeeee</color>
+    <color name="simple_cccccc">#ffcccccc</color>
+    <color name="pull_to_refresh_label_color">#ff737373</color>
+    <color name="dot_bg">#00ff0000</color>
+    <color name="dot_unselect_color">#50ffffff</color>
+    <color name="dot_select_color">#ffffffff</color>
+    <color name="progressbar_app">#ff666666</color>
+    <color name="arc_progress_background">#ffffffff</color>
+    <color name="arc_progress_sweeping_color">#ffcccccc</color>
+    <color name="tab_text_normal">#ffd9d2cc</color>
+    <color name="tab_text_highlight">#ffd6d2cf</color>
+    <color name="tabMedium">#ff2b2b2b</color>
+    <color name="tabDark">#ff000000</color>
+    <color name="tabTransparent">#10ffffff</color>
+    <color name="guide_view_bg">#ff999999</color>
+    <color name="popup_window_pressed_bg">#ff999999</color>
+    <color name="title_text_color">#ffffffff</color>
+    <color name="title_text_color_night">#ffb1b1b1</color>
+    <color name="default_window_bg">#ffffffff</color>
+    <color name="default_window_bg_night">#ff1a1b1d</color>
+    <color name="menu_item_text_normal">#ff535c74</color>
+    <color name="menu_item_text_highlight">#ffffffff</color>
+    <item name="menu_item_highlight" type="color">@color/menu_item_text_normal</item>
+    <color name="bg_row_pressed_start">#ffcccccc</color>
+    <color name="bg_row_pressed_center">#ffcccccc</color>
+    <color name="bg_row_pressed_end">#ffcccccc</color>
+    <color name="bg_row_normal">#ffffffff</color>
+    <item name="bg_row_normal_start" type="color">@color/bg_row_normal</item>
+    <item name="bg_row_normal_center" type="color">@color/bg_row_normal</item>
+    <item name="bg_row_normal_end" type="color">@color/bg_row_normal</item>
+    <color name="bg_row_border">#ffcacaca</color>
+    <color name="bg_row_pressed_start_night">#ff1a1b1d</color>
+    <color name="bg_row_pressed_center_night">#ff1a1b1d</color>
+    <color name="bg_row_pressed_end_night">#ff1a1b1d</color>
+
+</resources>

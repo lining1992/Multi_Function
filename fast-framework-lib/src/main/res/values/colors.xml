@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+  -->
+<resources>
+
+    <!-- 用于底部大button、顶部导航栏背景色、需要强调突出的文字、按钮和icon -->
+    <color name="fast_framework_global">#fff05858</color>
+    <!-- 用于重要级文字、内容标题颜色 -->
+    <color name="fast_framework_f_major">#ff333333</color>
+    <!-- 用于普通级文字颜色 -->
+    <color name="fast_framework_f_general">#ff666666</color>
+    <!-- 用于辅助、次要级文字颜色 -->
+    <color name="fast_framework_f_minor">#ff999999</color>
+    <!-- 用于提示文字颜色 -->
+    <color name="fast_framework_f_hint">#ffdadada</color>
+    <!-- 用于用户名、链接文字颜色 -->
+    <color name="fast_framework_f_link">#ff5188a6</color>
+    <!-- 用于价格、促销文字颜色 -->
+    <color name="fast_framework_f_hot">#ffd62222</color>
+    <!-- 用于Log文字颜色 -->
+    <color name="fast_framework_f_log">#d03bfc34</color>
+    <!-- 用于Log背景颜色 -->
+    <color name="fast_framework_f_log_bg">#00000000</color>
+
+
+    <!-- 用于重要级分割线颜色 -->
+    <color name="fast_framework_divider_major">#ffdcdcdc</color>
+    <!-- 用于普通级分割线 -->
+    <color name="fast_framework_divider_general">#fff5f5f5</color>
+
+
+    <!-- 用于页面底色 -->
+    <color name="fast_framework_bg">#fff9f9f9</color>
+    <!-- 纯白色 -->
+    <color name="fast_framework_white">#ffffffff</color>
+    <!-- 纯黑色 -->
+    <color name="fast_framework_black">#ff000000</color>
+    <!-- 半透明的黑色 -->
+    <color name="fast_framework_black_20000000">#20000000</color>
+    <!-- 半透明的白色 -->
+    <color name="fast_framework_white_50ffffff">#50ffffff</color>
+    <!-- 透明的 -->
+    <color name="fast_framework_transparent">#00000000</color>
+
+    <!-- dialog-标题颜色 -->
+    <color name="fast_framework_dialog_title">@color/fast_framework_f_major</color>
+    <!-- dialog-消息颜色 -->
+    <color name="fast_framework_dialog_msg">@color/fast_framework_f_general</color>
+    <!-- dialog-主要按钮文字颜色 -->
+    <color name="fast_framework_dialog_button">@color/fast_framework_f_link</color>
+    <!-- dialog-次要按钮文字颜色 -->
+    <color name="fast_framework_dialog_button2">@color/fast_framework_f_link</color>
+    <!-- dialog-背景颜色 -->
+    <color name="fast_framework_dialog_bg">@color/fast_framework_white</color>
+    <!-- dialog-分割线颜色 -->
+    <color name="fast_framework_dialog_divider">#ffc6c6c6</color>
+
+
+    <!-- listview-item背景颜色 -->
+    <color name="fast_framework_listview_item_bg">#ffffffff</color>
+    <!-- listview-item背景颜色 -->
+    <color name="fast_framework_listview_item_bg_p">#20000000</color>
+
+
+    <!-- menu背景颜色 -->
+    <color name="fast_framework_menu_bg">#ffffffff</color>
+    <!-- bottom背景颜色 -->
+    <color name="fast_framework_bottom_bar_bg">#ffffffff</color>
+    <!-- shadow -->
+    <color name="default_shadow_color">#88757575</color>
+</resources>

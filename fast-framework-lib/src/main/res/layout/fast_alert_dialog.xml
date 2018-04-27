@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fast_framework_alert_dialog_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/fast_alert_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:text="标题"
+        android:textColor="@color/fast_framework_dialog_title"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/fast_alert_dialog_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="内容"
+        android:textColor="@color/fast_framework_dialog_msg"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="24dp"
+        android:background="@color/fast_framework_dialog_divider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/fast_alert_dialog_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/fast_framework_alert_dialog_button_l_s"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="@color/fast_framework_dialog_button"
+            android:textSize="18sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="@color/fast_framework_dialog_divider" />
+
+        <TextView
+            android:id="@+id/fast_alert_dialog_button2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/fast_framework_alert_dialog_button_r_s"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/fast_framework_f_major"
+            android:textSize="18sp" />
+    </LinearLayout>
+</LinearLayout>

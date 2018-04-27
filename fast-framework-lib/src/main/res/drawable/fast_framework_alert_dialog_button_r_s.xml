@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/fast_framework_alert_dialog_button_r" android:state_focused="true" />
+    <item android:drawable="@drawable/fast_framework_alert_dialog_button_r" android:state_pressed="true" />
+    <item android:drawable="@drawable/fast_framework_alert_dialog_button_r" android:state_selected="true" />
+    <item android:drawable="@drawable/fast_framework_alert_dialog_button_r" android:state_checked="true" />
+    <item android:drawable="@color/fast_framework_transparent" />
+
+</selector>

@@ -1,5 +1,6 @@
 package com.baidu.lining.displayadapter.ui.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -133,8 +134,9 @@ public class MainActivity extends AutoLayoutActivity implements NavigationView.O
     /**
      * 解决App重启后导致Fragment重叠的问题
      */
+    @SuppressLint("MissingSuperCall")
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-       // super.onSaveInstanceState(outState);
+        // super.onSaveInstanceState(outState);
     }
 }

@@ -1,0 +1,19 @@
+<!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape>
+            <!-- 中间填充颜色 -->
+            <solid android:color="#10000000" />
+            <!-- 中间圆角 -->
+            <corners
+                android:bottomLeftRadius="5dp"
+                android:bottomRightRadius="0dp"
+                android:topLeftRadius="0dp"
+                android:topRightRadius="0dp" />
+        </shape>
+    </item>
+
+</layer-list>

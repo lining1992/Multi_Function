@@ -2,16 +2,9 @@ package com.baidu.lining.displayadapter.ui.fragment;
 
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.MediaController;
 import android.widget.TextView;
@@ -23,24 +16,18 @@ import com.baidu.lining.displayadapter.api.BangumiAppIndexInfo;
 import com.baidu.lining.displayadapter.api.BangumiRecommendInfo;
 import com.baidu.lining.displayadapter.api.RetrofitHelper;
 import com.baidu.lining.displayadapter.base.BaseFragment;
-import com.baidu.lining.displayadapter.utils.DisplayUtil;
 import com.baidu.lining.displayadapter.widget.banner.BannerAdapter;
 import com.baidu.lining.displayadapter.widget.banner.BannerEntity;
 import com.baidu.lining.displayadapter.widget.banner.BannerUtils;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import rx.Observable;
-import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
-import rx.subscriptions.CompositeSubscription;
 
 /**
  * Created by Administrator on 2017/5/10.
@@ -103,14 +90,11 @@ public class LikeFragment extends BaseFragment implements MediaPlayer.OnCompleti
         RetrofitHelper.getBangumiAPI()
                 .getBangumiAppIndex()
                 .flatMap(new Func1<BangumiAppIndexInfo, Observable<BangumiRecommendInfo>>() {
-
-                    @Override
-                    public Observable<BangumiRecommendInfo> call(BangumiAppIndexInfo bangumiAppIndexInfo) {
-
-                        banners.addAll(bangumiAppIndexInfo.getResult().getAd().getHead());
-
-                        return RetrofitHelper.getBangumiAPI().getBangumiRecommended();
-                    }
+                             @Override
+                             public Observable<BangumiRecommendInfo> call(BangumiAppIndexInfo bangumiAppIndexInfo) {
+                                 banners.addAll(bangumiAppIndexInfo.getResult().getAd().getHead());
+                                 return RetrofitHelper.getBangumiAPI().getBangumiRecommended();
+                             }
                 })
                 .map(new Func1<BangumiRecommendInfo, List<BangumiRecommendInfo.ResultBean>>() {
                     @Override

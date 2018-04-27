@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/fast_notifi_progress_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@mipmap/ic_share_friends" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/fast_notifi_progress_icon">
+
+        <TextView
+            android:id="@+id/fast_notifi_progress_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="新版本升级包"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/fast_notifi_progress_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fast_notifi_progress_title"
+            android:layout_centerHorizontal="true"
+            android:text="状态"
+            android:textSize="12sp" />
+
+        <ProgressBar
+            android:id="@+id/fast_notifi_progressbar"
+            style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fast_notifi_progress_status" />
+    </RelativeLayout>
+
+</RelativeLayout>

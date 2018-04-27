@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+  -->
+<resources>
+
+    <!-- 导航标题 -->
+    <dimen name="fast_framework_sp_big_title">20sp</dimen>
+    <!-- 文章标题 -->
+    <dimen name="fast_framework_sp_title">16sp</dimen>
+    <!-- 文本字体 -->
+    <dimen name="fast_framework_sp_text">14sp</dimen>
+    <!-- 注释最小字体 -->
+    <dimen name="fast_framework_sp_note">12sp</dimen>
+    <!-- 列表标题 -->
+    <dimen name="fast_framework_sp_list_title">14sp</dimen>
+    <!-- 列表促销 -->
+    <dimen name="fast_framework_sp_list_hot">13sp</dimen>
+    <!-- 列表其他 -->
+    <dimen name="fast_framework_sp_list_other">11sp</dimen>
+
+
+    <!-- 标题栏高度 -->
+    <dimen name="fast_framework_title_bar">56dp</dimen>
+    <!-- 首页菜单栏高度 -->
+    <dimen name="fast_framework_title_bar_menu">42dp</dimen>
+    <!-- 底部栏高度 -->
+    <dimen name="fast_framework_bottom_bar">50dp</dimen>
+    <!-- 底部栏icon尺寸大小 -->
+    <dimen name="fast_framework_bottom_bar_icon">24dp</dimen>
+
+    <!-- Circular Progress Bar -->
+    <dimen name="default_stroke_width">7dp</dimen>
+    <dimen name="default_background_stroke_width">3dp</dimen>
+    <!-- end -->
+
+    <!-- shadown -->
+    <dimen name="default_corner_radius">4dp</dimen>
+    <dimen name="default_shadow_radius">4dp</dimen>
+
+</resources>

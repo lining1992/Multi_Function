@@ -1,8 +1,6 @@
 package com.baidu.lining.displayadapter.ui.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
@@ -10,13 +8,10 @@ import android.widget.ImageView;
 
 import com.baidu.lining.displayadapter.R;
 import com.baidu.lining.displayadapter.base.BaseActivity;
-import com.zhy.autolayout.AutoLayoutActivity;
 
 import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
@@ -31,7 +26,7 @@ public class SplashActivity extends BaseActivity{
 
     @Override
     public int getLayoutRes() {
-        return R.layout.activity_splash;
+        return R.layout.activity_splash_app;
     }
 
     @Override

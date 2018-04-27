@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2018 Baidu, Inc. All Rights Reserved.
+  -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:color="#FFFFFFFF" android:state_activated="true"/>
+    <item android:color="#66FFFFFF" android:state_activated="false"/>
+</selector>

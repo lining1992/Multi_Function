@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+  -->
+<resources>
+
+    <!-- TabIndicator的参数设置 -->
+    <declare-styleable name="PagerSlidingTab">
+        <attr name="indicatorColor" format="color" />
+        <attr name="underlineColor" format="color" />
+        <attr name="dividerColor" format="color" />
+        <attr name="indicatorHeight" format="dimension" />
+        <attr name="underlineHeight" format="dimension" />
+        <attr name="pst_dividerPadding" format="dimension" />
+        <attr name="tabPaddingLeftRight" format="dimension" />
+        <attr name="scrollOffset" format="dimension" />
+        <attr name="tabBackgrounds" format="reference" />
+        <attr name="sameLine" format="boolean" />
+        <attr name="pst_textAllCaps" format="boolean" />
+    </declare-styleable>
+
+    <!-- Circular Progress Bar -->
+    <declare-styleable name="CircularProgressBar">
+        <attr name="cpb_progress" format="integer" />
+        <attr name="cpb_progressbar_color" format="color" />
+        <attr name="cpb_background_progressbar_color" format="color" />
+        <attr name="cpb_progressbar_width" format="dimension" />
+        <attr name="cpb_background_progressbar_width" format="dimension" />
+    </declare-styleable>
+    <!-- end -->
+
+    <declare-styleable name="ProgressWheel">
+        <attr name="matProg_progressIndeterminate" format="boolean" />
+        <attr name="matProg_barColor" format="color" />
+        <attr name="matProg_rimColor" format="color" />
+        <attr name="matProg_rimWidth" format="dimension" />
+        <attr name="matProg_spinSpeed" format="float" />
+        <attr name="matProg_barSpinCycleTime" format="integer" />
+        <attr name="matProg_circleRadius" format="dimension" />
+        <attr name="matProg_fillRadius" format="boolean" />
+        <attr name="matProg_barWidth" format="dimension" />
+        <attr name="matProg_linearProgress" format="boolean" />
+    </declare-styleable>
+
+    <!-- 自定义radio button属性 -->
+    <declare-styleable name="FastRadioButton">
+        <!-- 设置图片资源 -->
+        <attr name="fast_drawableTop" format="reference" />
+        <attr name="fast_drawableBottom" format="reference" />
+        <attr name="fast_drawableRight" format="reference" />
+        <attr name="fast_drawableLeft" format="reference" />
+        <!-- 设置图片的宽度 -->
+        <attr name="fast_drawableLeftWith" format="dimension" />
+        <attr name="fast_drawableTopWith" format="dimension" />
+        <attr name="fast_drawableRightWith" format="dimension" />
+        <attr name="fast_drawableBottomWith" format="dimension" />
+        <!-- 设置图片的高度 -->
+        <attr name="fast_drawableLeftHeight" format="dimension" />
+        <attr name="fast_drawableTopHeight" format="dimension" />
+        <attr name="fast_drawableRightHeight" format="dimension" />
+        <attr name="fast_drawableBottomHeight" format="dimension" />
+        <!-- 设置图片和文字的距离 -->
+        <attr name="fast_drawableMarginLeft" format="dimension" />
+        <attr name="fast_drawableMarginTop" format="dimension" />
+        <attr name="fast_drawableMarginRight" format="dimension" />
+        <attr name="fast_drawableMarginBottom" format="dimension" />
+    </declare-styleable>
+
+    <!-- Cover Flow -->
+    <declare-styleable name="FeatureCoverFlow">
+        <attr name="coverWidth" format="dimension" />
+        <attr name="coverHeight" format="dimension" />
+        <attr name="spacing" format="float" />
+        <attr name="rotationThreshold" format="float" />
+        <attr name="scalingThreshold" format="float" />
+        <attr name="adjustPositionThreshold" format="float" />
+        <attr name="adjustPositionMultiplier" format="float" />
+        <attr name="maxRotationAngle" format="float" />
+        <attr name="maxScaleFactor" format="float" />
+        <attr name="circlePathRadius" format="float" />
+        <attr name="circlePathRadiusInMatrixSpace" format="float" />
+        <attr name="reflectionHeight" format="float" />
+        <attr name="reflectionGap" format="dimension" />
+        <attr name="reflectionOpacity" format="integer" />
+        <attr name="tunningWidgetSize" format="dimension" />
+        <attr name="alignAnimationTime" format="integer" />
+        <attr name="verticalPaddingTop" format="dimension" />
+        <attr name="verticalPaddingBottom" format="dimension" />
+        <attr name="reflectionBackroundColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="BasicContentBand">
+        <attr name="gridMode">
+            <flag name="fixed" value="0" />
+            <flag name="dynamic" value="1" />
+        </attr>
+
+        <attr name="deviceSpecificPixelSize" format="integer" />
+    </declare-styleable>
+
+    <!-- 皮肤 -->
+    <declare-styleable name="SkinnableView">
+        <attr name="android:background" />
+        <attr name="backgroundTint" />
+    </declare-styleable>
+
+    <declare-styleable name="SkinnableTextView">
+        <attr name="android:textColor" />
+    </declare-styleable>
+
+    <declare-styleable name="SkinnableButton">
+        <attr name="android:textColor" />
+    </declare-styleable>
+
+</resources>

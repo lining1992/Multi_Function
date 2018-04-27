@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fast_view_titlebar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/fast_framework_title_bar"
+    android:background="@color/fast_framework_global">
+
+    <LinearLayout
+        android:id="@+id/fast_view_titlebar_l"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/view_title_bar_l_iv"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/fast_framework_titlebar_btn_bg_selector"
+            android:padding="16dp"
+            android:src="@mipmap/fast_ic_back" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="12dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/fast_framework_white_50ffffff" />
+
+        <TextView
+            android:id="@+id/view_title_bar_m_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:gravity="center"
+            android:text="标题"
+            android:textColor="@color/fast_framework_white"
+            android:textSize="@dimen/fast_framework_sp_big_title" />
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/view_title_bar_r_cb"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/fast_framework_titlebar_btn_bg_selector"
+        android:button="@null"
+        android:drawableRight="@drawable/fast_framework_night_btn_selector"
+        android:gravity="center"
+        android:padding="18dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="@color/fast_framework_white_50ffffff" />
+
+</RelativeLayout>

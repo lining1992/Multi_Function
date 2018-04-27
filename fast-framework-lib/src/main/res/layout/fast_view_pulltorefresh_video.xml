@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2016 Baidu, Inc. All Rights Reserved.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.fast.framework.view.videolist.widget.TextureVideoView
+            android:id="@+id/pull_to_refresh_video_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <ImageView
+            android:id="@+id/pull_to_refresh_video_cover"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop" />
+
+        <com.fast.framework.view.CircularProgressBar
+            android:id="@+id/pull_to_refresh_video_progress"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            app:cpb_background_progressbar_color="@color/white"
+            app:cpb_background_progressbar_width="10dp"
+            app:cpb_progressbar_color="@color/colorPrimary"
+            app:cpb_progressbar_width="10dp" />
+    </FrameLayout>
+
+</RelativeLayout>

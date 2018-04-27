@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<resources>
+
+    <!-- 用于底部大button、顶部导航栏背景色、需要强调突出的文字、按钮和icon -->
+    <color name="fast_framework_global">#ff993333</color>
+
+
+    <!-- listview-item背景颜色 -->
+    <color name="fast_framework_listview_item_bg">#ff5188a6</color>
+    <!-- listview-item背景颜色 -->
+    <color name="fast_framework_listview_item_bg_p">#ffd62222</color>
+
+
+    <!-- menu背景颜色 -->
+    <color name="fast_framework_menu_bg">#ff000000</color>
+    <!-- home-bottom背景颜色 -->
+    <color name="fast_framework_bottom_bar_bg">#ff000000</color>
+
+</resources>

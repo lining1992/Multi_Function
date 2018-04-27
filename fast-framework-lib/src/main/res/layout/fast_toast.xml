@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (C) 2017 Baidu, Inc. All Rights Reserved.
+  -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="35dp"
+    android:background="#80ffffff"
+    android:padding="10dp">
+
+    <TextView
+        android:id="@+id/fast_toast_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:maxLines="2"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="toast"
+        android:textColor="#ff000000"
+        android:textSize="14sp" />
+
+</RelativeLayout>

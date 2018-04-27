@@ -1,1 +1,1 @@
-include ':app', ':mylibrary', ':quicksidebar2'
+include ':app', ':CalendarControl', ':quicksidebar', ':HTTP', ':BaseUI', ':fast-framework-lib'

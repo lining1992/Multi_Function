@@ -3,7 +3,6 @@ package com.baidu.lining.displayadapter.widget.banner;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -11,8 +10,6 @@ import android.widget.LinearLayout;
 import com.baidu.lining.displayadapter.R;
 import com.baidu.lining.displayadapter.api.BangumiAppIndexInfo;
 import com.baidu.lining.displayadapter.utils.DisplayUtil;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -100,13 +97,13 @@ public class BannerUtils implements BannerAdapter.ViewPagerOnItemClickListener, 
         for (int i = 0; i < list.size(); i++) {
             ImageView mImageView = new ImageView(context);
 
-            Glide.with(context)
-                    .load(list.get(i).img)
-                    .centerCrop()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .placeholder(R.drawable.bili_default_image_tv)
-                    .dontAnimate()
-                    .into(mImageView);
+//            Glide.with(context)
+//                    .load(list.get(i).img)
+//                    .centerCrop()
+//                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+//                    .placeholder(R.drawable.bili_default_image_tv)
+//                    .dontAnimate()
+//                    .into(mImageView);
             imageViewList.add(mImageView);
         }
 
