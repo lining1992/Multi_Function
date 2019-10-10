@@ -1,16 +1,21 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+apply from: "config.gradle"
 buildscript {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' } // maven aliyun mirror
+        maven { url 'https://dl.google.com/dl/android/maven2/' } // google()
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter/' } // jcenter aliyun mirror
+        maven { url "https://jitpack.io" }
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
+//        maven {
+//            url 'https://maven.google.com/'
+//            name 'Google'
+//        }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
+        classpath 'com.android.tools.build:gradle:3.4.1'
+//        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
         classpath 'me.tatarka:gradle-retrolambda:3.2.5'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -19,11 +24,15 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' } // maven aliyun mirror
+        maven { url 'https://dl.google.com/dl/android/maven2/' } // google()
+        maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter/' } // jcenter aliyun mirror
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        maven { url "https://jitpack.io" }
+//        maven {
+//            url 'https://maven.google.com/'
+//            name 'Google'
+//        }
     }
 }
 

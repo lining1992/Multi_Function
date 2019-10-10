@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
 
 
 
@@ -28,5 +28,5 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/locSDK_6.22.jar')
     implementation files('libs/BaiduLBS_Android.jar')
-    compile project(':fast-framework-lib')
+    api project(':fast-framework-lib')
 }

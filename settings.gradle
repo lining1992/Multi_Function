@@ -1,1 +1,1 @@
-include ':app', ':CalendarControl', ':quicksidebar', ':HTTP', ':BaseUI', ':fast-framework-lib'
+include ':app', ':CalendarControl', ':quicksidebar', ':HTTP', ':BaseUI', ':fast-framework-lib', ':arms', ':arms-autolayout', ':arms-imageloader-glide'
