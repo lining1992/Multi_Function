@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.android["compileSdkVersion"]
-    buildToolsVersion "28.0.3"
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
 
     aaptOptions {
         cruncherEnabled = false
@@ -16,10 +16,11 @@ android {
 
     defaultConfig {
         applicationId "com.baidu.lining.displayadapter"
-        minSdkVersion 19
-        targetSdkVersion 27
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     buildTypes {
         debug {
@@ -51,8 +52,8 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    api 'com.jakewharton:butterknife:' + rootProject.ext.version.butterknifeSdkVersion
+    annotationProcessor 'com.jakewharton:butterknife-compiler:' + rootProject.ext.version.butterknifeSdkVersion
     api(name: 'SMSSDK-2.1.4', ext: 'aar')
     api(name: 'SMSSDKGUI-2.1.4', ext: 'aar')
     api files('libs/Volley(1).jar')
@@ -60,11 +61,10 @@ dependencies {
     api files('libs/ShareSDK-Wechat-Core-2.5.9.jar')
     api files('libs/ShareSDK-QQ-2.5.9.jar')
     api project(':HTTP')
-    api project(':fast-framework-lib')
+//    api project(':fast-framework-lib')
     api project(':CalendarControl')
     api project(':quicksidebar')
-
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':lib-base')
 
     //support
     implementation rootProject.ext.dependencies["cardview-v7"]
@@ -105,6 +105,7 @@ dependencies {
     //依赖 arms-imageloader-glide 后还需要在 GlobalConfiguration 中手动注册 GlideImageLoaderStrategy
 //    implementation 'me.jessyan:arms-imageloader-glide:2.5.2'
     implementation project(':arms-imageloader-glide')
+//    implementation 'com.kwai.koom:java-oom:1.0.5'
 
     //test
     testImplementation rootProject.ext.dependencies["junit"]

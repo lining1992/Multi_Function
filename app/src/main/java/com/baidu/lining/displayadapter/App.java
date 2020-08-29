@@ -12,6 +12,7 @@ import com.jess.arms.base.delegate.AppLifecycles;
 import com.jess.arms.di.component.AppComponent;
 import com.jess.arms.utils.ArmsUtils;
 import com.jess.arms.utils.Preconditions;
+import com.kwai.koom.javaoom.KOOM;
 
 import cn.smssdk.SMSSDK;
 
@@ -34,9 +35,10 @@ public class App extends Application implements com.jess.arms.base.App {
             this.mAppDelegate.onCreate(this);
         }
         SMSSDK.initSDK(this, "1d6e2e4002a7b", "04f6de449a013d97c765d34649ee7e1d");
-
+        KOOM.init(this);
         queues = Volley.newRequestQueue(getApplicationContext());
         mInstance = this;
+//        RetrofitClient.init(getApplicationContext());
     }
 
     public static App getInstance() {

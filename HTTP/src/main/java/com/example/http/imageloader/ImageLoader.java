@@ -10,7 +10,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
-import com.fast.framework.style.glide.GlideCircleTransform;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 

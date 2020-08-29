@@ -12,7 +12,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.WindowManager;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,12 +27,10 @@ import butterknife.ButterKnife;
 public class MainActivity extends AutoLayoutActivity implements NavigationView.OnNavigationItemSelectedListener{
 
 
-    @BindView(R.id.main_navi)
+    @BindView(R.id.main_navigation)
     public NavigationView navigationView;
     @BindView(R.id.main_draw)
     public DrawerLayout drawerLayout;
-
-    private FrameLayout fl;
     public static Toolbar toolbar;
     public String packageName;
     public TextView title;

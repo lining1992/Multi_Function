@@ -19,5 +19,6 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-    api project(':fast-framework-lib')
+//    api project(':fast-framework-lib')
+    implementation 'com.android.support:appcompat-v7:27.0.0'
 }

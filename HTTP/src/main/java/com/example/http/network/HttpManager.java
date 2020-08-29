@@ -58,7 +58,7 @@ public final class HttpManager {
         HostnameVerifier hostnameVerifier = this.createHostnameVerifier();
         Builder builder = (new Builder()).connectTimeout(10L, TimeUnit.SECONDS).writeTimeout(10L, TimeUnit.SECONDS).readTimeout(10L, TimeUnit.SECONDS).cookieJar(this.mCookieJarImpl);
         if(trustManager != null && sslSocketFactory != null) {
-            builder.sslSocketFactory(sslSocketFactory, trustManager).hostnameVerifier(hostnameVerifier);
+            builder.sslSocketFactory(sslSocketFactory).hostnameVerifier(hostnameVerifier);
         } else {
             LogUtil.e("codriver_network", "trustManager==null || sslSocketFactory==null");
         }
@@ -152,8 +152,6 @@ public final class HttpManager {
                 } catch (Exception var10) {
                     var10.printStackTrace();
                     HttpManager.this.errorCallback(callback, url, "[1002]" + var10.toString());
-                } finally {
-                    response.close();
                 }
 
             }
@@ -257,14 +255,6 @@ public final class HttpManager {
                             fileOutputStream.close();
                         } catch (Exception var29) {
                             var29.printStackTrace();
-                        }
-                    }
-
-                    if(request != null) {
-                        try {
-                            response.close();
-                        } catch (Exception var28) {
-                            var28.printStackTrace();
                         }
                     }
 

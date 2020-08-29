@@ -8,7 +8,7 @@ import android.util.Log;
 /**
  * An encapsulation of {@link Log}, enable log level and print log with parameters.
  *
- * @author http://www.liaohuqiu.net/
+ * @author http://www.liaohuqiu.com.example.commonlibrary.net/
  */
 public class PtrCLog {
 

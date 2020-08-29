@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.base" >
+
+    <application>
+        <meta-data
+            android:name="com.example.commonlibrary.glide.GlideCache"
+            android:value="GlideModule"/>
+    </application>
+
+</manifest>

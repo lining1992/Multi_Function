@@ -19,5 +19,5 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
-    api project(':fast-framework-lib')
+//    api project(':fast-framework-lib')
 }
