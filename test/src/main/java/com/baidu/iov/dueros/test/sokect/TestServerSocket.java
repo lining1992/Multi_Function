@@ -26,7 +26,10 @@ public class TestServerSocket {
                 DataInputStream is = new DataInputStream(socket.getInputStream());
                 byte[] bytes = new byte[1024];
                 int len = is.read(bytes);
-                System.out.println("debugli " + new String(bytes, 0, len));
+                if (len > 0) {
+                    System.out.println("debugli "
+                            + new String(bytes, 0, len));
+                }
                 Thread.sleep(2000);
                 socket.getOutputStream().write(("I am Server " + i++).getBytes());
             }

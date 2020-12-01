@@ -23,7 +23,7 @@ public class CustomTextView extends TextView {
 
     public int mTextColor;
     public int mTextChangeColor;
-    private Paint mTextPaint, mTextChangePaint;
+    public Paint mTextPaint, mTextChangePaint;
     private Direction direction = Direction.LEFT_TO_RIGHT;
     private float mCurrentTextProgress = 0.0f;
     private String mText;

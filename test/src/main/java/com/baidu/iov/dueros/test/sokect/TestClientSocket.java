@@ -28,7 +28,10 @@ public class TestClientSocket {
                 DataInputStream dataInputStream = new DataInputStream(socket.getInputStream());
                 byte[] bytes = new byte[1024];
                 int read = dataInputStream.read(bytes);
-                System.out.println("debugli " + new String(bytes, 0, read));
+                if (read > 0) {
+                    System.out.println("debugli "
+                            + new String(bytes, 0, read));
+                }
 
             }
         } catch (Exception e) {

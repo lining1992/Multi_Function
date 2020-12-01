@@ -3,6 +3,9 @@ package com.baidu.iov.dueros.test.activity;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.os.Bundle;
+import android.os.Looper;
+import android.util.Log;
+import android.util.LogPrinter;
 import android.view.View;
 
 import androidx.annotation.Nullable;
